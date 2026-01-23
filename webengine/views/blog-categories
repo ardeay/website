@@ -1,0 +1,12 @@
+<h2>Blog Categories</h2>
+<ul class="side-categories">
+	
+	{{each category as cat limit 10 sort by cat.name asc}}
+		
+		<li onclick="window.location='{{cat.getUrl()}}';">
+			<a href="{{cat.getUrl()}}">{{cat.name}}</a>		
+		</li>
+	
+	{{end-each}}
+
+</ul>

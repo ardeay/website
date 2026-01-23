@@ -1,0 +1,28 @@
+{{if {!page.image} !== "" }}
+
+	{{current_view}}
+
+{{else}}
+
+	{{include header}}
+	
+
+	<div class="content">
+		
+			{{current_view}} 
+	</div>
+
+{{end-if}}
+
+{{include footer}}
+<script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/gh/zesty-io/explorer@cdn/dist/main.dev.js"
+      defer="defer"
+    ></script>
+
+<script type="text/javascript" src="//use.typekit.net/oce6wpo.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<!-- studio communicator -->
+<script type="text/javascript" src="/communicator.js"></script>

@@ -1,0 +1,9 @@
+<ul class="comments">
+	{{each api.twitter.hashtag({get_var.hash},40) as tweet}}
+	<li style="border-left-color: #{{tweet.profile_link_color}}" >
+		<img src="{{tweet.profile_image_url}}" />
+		<p><strong><a href="http://twitter.com/{{tweet.screen_name}}">{{tweet.name}}</a></strong>: {{tweet.text.replace(#{get_var.hash}|@RandyApuzzo|http(.+?)\s,'')}}</p>
+		<em>{{tweet.created_at}}</em>
+	</li>
+	{{end-each}}
+</ul>

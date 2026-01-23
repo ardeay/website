@@ -1,0 +1,7 @@
+[{{each article as art limit 30}}
+{
+	"user": "Ardeay",
+	"code" : "{{art.title.escapeForJs()}}"
+}{{if {art._length} != {art._num} }},{{end-if}}
+{{end-each}}
+]

@@ -1,0 +1,12 @@
+<div id="portfolio" class="portfolio">
+{{each images as img sort by rand() }}
+	<a href="{{img.img.getImage()}}" data-milkbox="gall1" title="<strong>{{img.title.htmlentities()}}</strong>	
+{{img.description.htmlentities()}}">
+	<img src="{{img.img.getImage(,120,fit)}}" alt="{{img.title}}" />
+	</a>
+{{end-each}}
+	
+	{{each article as post}}
+	{{post.article_body.striptags(0,200)}}
+	{{end-each}}
+</div>

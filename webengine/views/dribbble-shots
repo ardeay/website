@@ -1,0 +1,24 @@
+<h1><a href="http://www.gozesty.com">Zesty's</a> Dribbble API Parsley Test</h1>
+<p>This page is testing parsley's Dribbble api calls. Learn more and see these example <a href="http://gozesty.com/help-and-resources/parsley-api-documentation/dribble-api/"> Dribbble API calls on Zesty.</a>  <form method="get"><label>The user you're are viewing is </label><input type="text" name="user" value="{{get_var.user}}" /><input type="submit" value="change" /></form> </p>
+<h2>Recent shots from {{get_var.user}}</h2>
+{{each api.dribbble.getShotsByPlayer({get_var.user}) as shot }}
+	<img src="{{shot.image_teaser_url}}" alt="{{shot.title}}" />
+{{end-each}}
+
+
+<h2>Shots from players {{get_var.user}} follows</h2>
+{{each api.dribbble.getPlayerFollowingShots({get_var.user}) as shot}}
+<img src="{{shot.image_teaser_url}}" alt="{{shot.title}}" />
+{{end-each}}
+
+<h2>Shots {{get_var.user}} likes <3</h2>
+{{each api.dribbble.getShotsLikedByPlayer({get_var.user}) as shot}}
+<img src="{{shot.image_teaser_url}}" alt="{{shot.title}}" />
+{{end-each}}
+
+<h2>Who's following {{get_var.user}}</h2>
+<ul>
+{{each api.dribbble.getPlayerFollowers({get_var.user}) as player}}
+<li><a href="{{player.url}}"><img src="{{player.avatar_url}}" alt="{{player.name}}'s avatar}}" /></a></li>
+{{end-each}}
+</ul>

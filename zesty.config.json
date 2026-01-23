@@ -1,0 +1,365 @@
+{
+    "instance_zuid": "8-45a294a-6qq6f8",
+    "instance": {
+        "views": {
+            "loader": {
+                "zuid": "11-6b2e404-505hng",
+                "type": "loader",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2025-11-13T17:46:19Z"
+            },
+            "header": {
+                "zuid": "11-6b2e404-1h1dhz",
+                "type": "snippet",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:04Z"
+            },
+            "footer": {
+                "zuid": "11-6b2e404-939v3m",
+                "type": "snippet",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2022-10-21T14:33:20Z"
+            },
+            "blog": {
+                "zuid": "11-6b2e404-9clmxg",
+                "type": "templateset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:05Z"
+            },
+            "author_page": {
+                "zuid": "11-6b2e404-1p31lj",
+                "type": "templateset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:06Z"
+            },
+            "author": {
+                "zuid": "11-6b2e404-lhc1rd",
+                "type": "pageset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:06Z"
+            },
+            "category_page": {
+                "zuid": "11-6b2e404-kgc1q6",
+                "type": "templateset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:07Z"
+            },
+            "category": {
+                "zuid": "11-6b2e404-813z6",
+                "type": "pageset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2018-10-15T21:36:51Z"
+            },
+            "article": {
+                "zuid": "11-6b2e404-5hng2k",
+                "type": "pageset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2025-02-27T17:55:14Z"
+            },
+            "tag_page": {
+                "zuid": "11-6b2e404-td6hhr",
+                "type": "templateset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2018-10-15T21:34:59Z"
+            },
+            "tag": {
+                "zuid": "11-6b2e404-9p8t4t",
+                "type": "pageset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:08Z"
+            },
+            "blog-categories": {
+                "zuid": "11-6b2e404-krq2vn",
+                "type": "snippet",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:09Z"
+            },
+            "blog-author-short": {
+                "zuid": "11-6b2e404-cnsmjb",
+                "type": "snippet",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2025-02-27T17:55:54Z"
+            },
+            "blog-recent-articles": {
+                "zuid": "11-6b2e404-qr8m5j",
+                "type": "snippet",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:10Z"
+            },
+            "blog-articles-by-author": {
+                "zuid": "11-6b2e404-g53lf0",
+                "type": "snippet",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2019-10-03T17:10:13Z"
+            },
+            "home_page": {
+                "zuid": "11-6b2e404-cshs3v",
+                "type": "templateset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2025-11-13T22:03:13Z"
+            },
+            "basic-sidebar": {
+                "zuid": "11-6b2e404-5ghs4z",
+                "type": "snippet",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:11Z"
+            },
+            "time_capsule": {
+                "zuid": "11-6b2e404-blksxz",
+                "type": "templateset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:12Z"
+            },
+            "portfolio": {
+                "zuid": "11-6b2e404-fwt64n",
+                "type": "templateset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:12Z"
+            },
+            "404-page": {
+                "zuid": "11-6b2e404-97132p",
+                "type": "404",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:13Z"
+            },
+            "newsletter_signup": {
+                "zuid": "11-6b2e404-w5vjpj",
+                "type": "templateset",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:14Z"
+            },
+            "email-signup": {
+                "zuid": "11-6b2e404-04bzds",
+                "type": "snippet",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:14Z"
+            },
+            "garnish-awesome-social-icons": {
+                "zuid": "11-6b2e404-50341g",
+                "type": "snippet",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:15Z"
+            },
+            "twitter-comments": {
+                "zuid": "11-6b2e404-62fj5s",
+                "type": "ajax-html",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:15Z"
+            },
+            "dribbble-shots": {
+                "zuid": "11-6b2e404-f564pr",
+                "type": "ajax-html",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:16Z"
+            },
+            "twitter-test": {
+                "zuid": "11-6b2e404-55xv77",
+                "type": "ajax-html",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:17Z"
+            },
+            "media-looping": {
+                "zuid": "11-6b2e404-k75qww",
+                "type": "ajax-html",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:17Z"
+            },
+            "media-folder": {
+                "zuid": "11-6b2e404-mp90tr",
+                "type": "ajax-html",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2018-10-15T21:36:44Z"
+            },
+            "19-screensaver.json": {
+                "zuid": "11-6b2e404-r1kdx2",
+                "type": "ajax-json",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:18Z"
+            },
+            "/.well-known/pki-validation/gsdv.txt": {
+                "zuid": "11-73eda4-whht5r",
+                "type": "ajax-json",
+                "updatedAt": "2018-08-13T22:34:45Z",
+                "createdAt": "2020-05-12T05:24:19Z"
+            },
+            "/pro.vue": {
+                "zuid": "11-190d8c-njk6mz",
+                "type": "ajax-json",
+                "updatedAt": "2019-03-22T02:05:27Z",
+                "createdAt": "2020-07-25T05:28:40Z"
+            },
+            "/vendor/vendor-export.js": {
+                "zuid": "11-aa31d8-gnh3mh",
+                "type": "ajax-json",
+                "updatedAt": "2019-04-01T20:32:39Z",
+                "createdAt": "2020-05-12T05:24:02Z"
+            },
+            "/graphql/articles.json": {
+                "zuid": "11-640650-btnl1v",
+                "type": "ajax-json",
+                "updatedAt": "2019-05-23T20:53:37Z",
+                "createdAt": "2020-05-12T05:24:02Z"
+            },
+            "/graphql/author.json": {
+                "zuid": "11-cf8974-x4m256",
+                "type": "ajax-json",
+                "updatedAt": "2019-05-23T22:01:24Z",
+                "createdAt": "2020-05-12T05:24:03Z"
+            },
+            "/.well-known/keybase.txt": {
+                "zuid": "11-f5dec0-3z3671",
+                "type": "ajax-json",
+                "updatedAt": "2019-06-06T18:42:01Z",
+                "createdAt": "2020-05-12T05:24:19Z"
+            },
+            "my_favorite_books": {
+                "zuid": "11-ac84d4e0b6-d6dpmm",
+                "type": "pageset",
+                "updatedAt": "2022-02-25T18:35:23Z",
+                "createdAt": "2022-02-25T18:35:23Z"
+            },
+            "/events/event.ics": {
+                "zuid": "11-b8c9c7b2b2-m7m405",
+                "type": "ajax-json",
+                "updatedAt": "2022-02-28T17:01:20Z",
+                "createdAt": "2022-02-28T17:02:32Z"
+            },
+            "about_us": {
+                "zuid": "11-c8e6f0b2ec-zkt1px",
+                "type": "templateset",
+                "updatedAt": "2023-01-11T22:33:37Z",
+                "createdAt": "2023-01-11T22:33:41Z"
+            },
+            "/-/block/email_marketing.html": {
+                "zuid": "11-d280cbdcae-68317c",
+                "type": "block",
+                "updatedAt": "2025-02-27T17:43:18Z",
+                "createdAt": "2025-02-27T17:47:32Z"
+            },
+            "/communicator.js": {
+                "zuid": "11-d2d0dbe8e4-q6sb1m",
+                "type": "ajax-json",
+                "updatedAt": "2025-11-13T17:45:47Z",
+                "createdAt": "2025-11-13T22:09:09Z"
+            }
+        },
+        "styles": {
+            "reset.less": {
+                "zuid": "10-6b2e404-nbcfpv",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "structure.less": {
+                "zuid": "10-6b2e404-2mlv3n",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "typography.less": {
+                "zuid": "10-6b2e404-9h79jf",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "reponsive.less": {
+                "zuid": "10-6b2e404-xcmn6p",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "blog.less": {
+                "zuid": "10-6b2e404-7l259n",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "authors.less": {
+                "zuid": "10-6b2e404-rr6d3w",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2019-12-28T22:12:46Z"
+            },
+            "article.less": {
+                "zuid": "10-6b2e404-zzp7sw",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "tags.less": {
+                "zuid": "10-6b2e404-bh2lg7",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "mixins.less": {
+                "zuid": "10-6b2e404-glblkq",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "portfolio.less": {
+                "zuid": "10-6b2e404-k3j021",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "milkbox.less": {
+                "zuid": "10-6b2e404-w15d31",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "font-awesome.less": {
+                "zuid": "10-6b2e404-plkrr7",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "garnish-awesome-social-icons.less": {
+                "zuid": "10-6b2e404-wf54xv",
+                "type": "text/less",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2022-09-09T07:51:38Z"
+            },
+            "test.sass.scss": {
+                "zuid": "10-7066a0-bdpbts",
+                "type": "text/scss",
+                "updatedAt": "2019-12-28T22:26:57Z",
+                "createdAt": "2019-12-28T22:27:04Z"
+            },
+            "about_us.module.css": {
+                "zuid": "10-d6bf83b5a0-9m90hs",
+                "type": "text/css",
+                "updatedAt": "2023-01-11T22:33:44Z",
+                "createdAt": "2023-01-11T22:33:44Z"
+            }
+        },
+        "scripts": {
+            "main.js": {
+                "zuid": "10-6b2e404-5d59n2",
+                "type": "text/javascript",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "shiv.js": {
+                "zuid": "10-6b2e404-pw5r2n",
+                "type": "text/javascript",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "video.js": {
+                "zuid": "10-6b2e404-wcvvd2",
+                "type": "text/javascript",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            },
+            "particles.js": {
+                "zuid": "10-6b2e404-39rk8b",
+                "type": "text/javascript",
+                "updatedAt": "2018-08-13T22:34:37Z",
+                "createdAt": "2018-08-13T22:34:39Z"
+            }
+        }
+    }
+}

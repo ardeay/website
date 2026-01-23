@@ -1,0 +1,23 @@
+<article>
+	<header>
+		<h1>{{thispage.title}}</h1>
+		<h2>{{thispage.description}}</h2>
+	</header>
+
+	<div class="article-body">	
+	{{each tag as t where name = concat('', 0 + name) sort by name DESC }}
+	
+	
+	<h6>{{t.name}}</h6>
+		<p>
+		{{each article as a where FIND_IN_SET('{t.zuid}',a.tags)}}
+		<a class="thumbnail-link" href="{{a.getUrl()}}" title="{{a.title}}">
+			<img max-width="160" style="max-width:160px" alt="{{a.title}} main image thumbnail" src="{{a.image.getImage(160,160,crop)}}" />
+		</a>
+		{{end-each}}
+		</p>
+	
+	
+	{{end-each}}
+	</div>
+</article>

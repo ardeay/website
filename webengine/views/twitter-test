@@ -1,0 +1,10 @@
+<ul>
+
+{{each api.twitter.getUserFeed(andyfleming) as tweet}}
+	<li style="border-left-color: #{{tweet.profile_link_color}}" >
+		
+		<p><strong><a href="http://twitter.com/{{tweet.screen_name}}">{{tweet.name}}</a></strong>: {{tweet.text.substr(0,30)}}</p>
+		<em>{{tweet.created_at}}</em>
+	</li>
+{{end-each}}
+</ul>

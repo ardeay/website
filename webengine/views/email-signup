@@ -1,0 +1,14 @@
+<div class="email-signup">
+{{if {post_var.email} }}
+<h2>Thank you!</h2>
+{{else}}
+
+	<strong><span class="icon-envelope"></span> Join the blog mailing list</strong>
+	<form id="signup" name="signup" action="#signup" method="post">
+		<input name="zlf" type="hidden" value="1" />
+		<input name="zcf" type="hidden" value="1" />		
+		<input name="email" type="text" placeholder="your@email.com" />
+		<input type="submit" class="submit" value="submit" {{gaevent(signup,blog post signup,1,true)}} />
+	</form>
+{{end-if}}
+</div>

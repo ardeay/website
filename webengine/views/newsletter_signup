@@ -1,0 +1,3 @@
+<h1>{{thispage.title}}</h1>
+
+{{include email-signup}}

@@ -1,0 +1,29 @@
+<aside class="opening-description">
+	<h6>{{thispage.title}}</h6>
+</aside>
+
+
+<div class="page-content">
+	<div class="blog-wrap">
+		<h1 class="blog-h1"></h1>
+		<div class="page-description">{{thispage.description}}</div>
+
+		<hr />
+		
+		<ul class="tags">
+
+			{{each tag as tag sort by tag.name asc limit 3}}
+
+				<li onclick="window.location='{{tag.getUrl()}}';">
+					<a href="{{tag.getUrl()}}">{{tag.name}}</a>
+					{{each media.Late-2006 as media}}
+					<img src="{{media.image.getImage(200,200,crop)}}" />
+					{{end-each}}
+				</li>
+
+			{{end-each}}
+
+		</ul>
+	</div>
+
+</div>

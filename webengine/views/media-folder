@@ -1,0 +1,10 @@
+<h2>Looping through media folders</h2>
+<ul>
+{{each media.zesty-materials as img}}
+	<li>
+		<h4>{{img.filename}}</h4> 
+		<img src="{{img.image.getImage(200,200,crop)}}" />
+	</li>
+
+{{end-each}}
+</ul>

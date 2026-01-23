@@ -1,0 +1,22 @@
+{{if {get_var.zuid} }}
+	{{each article as art where z.zuid = '{get_var.zuid}' }}
+	{
+		"zuid" :"{{art._item_zuid}}",
+		"title" : "{{art.title.escapeForJs()}}",
+		"body" : "{{art._meta_description.escapeForJs()}}",
+		"author": "{{art.author}}"
+	}
+	{{end-each}}
+
+{{else}}
+[
+	{{each article as art where art.title LIKE '%{get_var.search}%'}}
+	{
+		"zuid" :"{{art._item_zuid}}",
+		"title" : "{{art.title.escapeForJs()}}",
+		"body" : "{{art._meta_description.escapeForJs()}}",
+		"author": "{{art.author}}"
+	}{{if {art._length} != {index} }},{{end-if}} 
+	{{end-each}}
+]
+{{end-if}}

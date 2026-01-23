@@ -1,0 +1,25 @@
+{{if {get_var.zuid} }}
+	{{each author as auth where z.zuid = '{get_var.zuid}' }}
+	{
+		"zuid" :"{{auth._item_zuid}}",
+		"name" : "{{auth.name.escapeForJs()}}",
+		"email" : "{{auth.email.escapeForJs()}}",		
+		"image" : "{{auth.image.getImage()}}",
+		"articles" : [{{each article as art where art.author = '{auth._item_zuid}'}}"{{art._item_zuid}}"{{if {art._length} != {art._num} }},{{end-if}}{{end-each}} ]
+	}
+	{{end-each}}
+
+{{else}}
+[
+	{{each author as auth}}
+	{
+		"zuid" :"{{auth._item_zuid}}",
+		"name" : "{{auth.name.escapeForJs()}}",
+		"email" : "{{auth.email.escapeForJs()}}",		
+		"image" : "{{auth.image.getImage()}}",
+		"articles" : [{{each article as art where art.author = '{auth._item_zuid}'}}"{{art._item_zuid}}"{{if {art._length} != {art._num} }},{{end-if}}{{end-each}} ]
+	}{{if {auth._length} != {auth._num} }},{{end-if}}
+	{{end-each}}
+	
+]
+{{end-if}}

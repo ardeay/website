@@ -1,0 +1,13 @@
+<ul class="other-articles-by-author">
+	
+	{{each article as articlefromauthor where articlefromauthor.author = {thispage.author} limit 5 sort by date}}
+		
+		<li onclick="window.location='{{articlefromauthor.getUrl()}}';">
+			<strong><a href="{{articlefromauthor.getUrl()}}">{{articlefromauthor.title}}</a></strong>
+			<p>{{articlefromauthor.sub_title}}</p>
+		
+		</li>
+	
+	{{end-each}}
+
+</ul>

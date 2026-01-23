@@ -1,0 +1,22 @@
+
+
+
+<div class="page-content">
+	<div class="blog-wrap">
+		<h1 class="blog-h1">Articles categorized in "{{thispage.name}}"</h1>
+		<hr />
+		<ul class="article-listing">
+		{{each article as cat_article where z.parent_zuid = {thispage.zuid} sort by cat_article.date DESC limit 20}}
+		
+			<li>
+				<h5>{{cat_article.title}}</h5>
+				<h6>{{cat_article.sub_title}}</h6>	
+				<p>{{cat_article.article_body.striptags(0,130)}}... <a href="{{cat_article.getUrl()}}">read more</a></p>
+				
+				
+			</li>
+		
+		{{end-each}}
+		</ul>
+	</div>
+</div>

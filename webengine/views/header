@@ -1,0 +1,34 @@
+<header class="main-header">
+	<div class="logo" onclick="window.location='/'"></div>
+
+	<nav>
+		<ul id="nav">
+			<li><a href="/">recent articles</a></li>
+			<!--<li><a href="/">Conquests</a></li>-->
+			<li><a href="{{truePath(512)}}">About</a></li>
+			<li><a href="{{truePath(565)}}">Time Capsule</a></li>
+			<li><a href="/portfolio/">Images</a></li>
+
+		</ul>
+		
+				
+	</nav>
+	
+	<aside class="social">
+		<a title="Randy Apuzzo's Twitter page" href="https://twitter.com/RandyApuzzo">
+			<img target="_blank" alt="twitter icon" src="https://randyapuzzo.media.zestyio.com/twitter-icon.png"/>
+		</a>
+		<a title="Randy Apuzzo's Linkedin account" href="https://www.linkedin.com/in/rapuzzo">
+			<img target="_blank" alt="linkedin icon"  src="https://randyapuzzo.media.zestyio.com/linkedin-icon.png"/>
+		</a>
+		<!--
+		<a title="Randy Apuzzo's Google+ Page" href="//plus.google.com/116040820170447740448?prsrc=3" rel="publisher">
+			<img target="_blank" alt="google plus icon"  src="https://randyapuzzo.media.zestyio.com/googleplus-icon.png"/>
+		</a>-->
+		<a href="/article-feed.rss" title="RSS FEED">
+			<img target="_blank" alt="rss icon"  src="https://randyapuzzo.media.zestyio.com/rss-orange-icon.png"/>
+		</a>
+		
+	</aside>
+</header>
+

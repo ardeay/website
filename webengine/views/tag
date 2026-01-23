@@ -1,0 +1,21 @@
+<aside class="opening-description">
+	<h6>Article's tagged as "<a href="#">{{thispage.name}}</a>"</h6>
+</aside>
+
+<div class="page-content">
+	<div class="blog-wrap">
+		
+		
+		<ul class="article-listing">
+			{{each article as art where FIND_IN_SET({thispage.zuid},art.tags) sort by date DESC limit 20}}
+		
+			<li>
+				<h5>{{art.title}}</h5>
+				<h6>{{art.sub_title}}</h6>	
+				<p>{{art.article_body.striptags(0,130)}}... <a href="{{art.getUrl()}}">read more</a></p>
+			</li>
+		
+		{{end-each}}
+		</ul>
+	</div>
+</div>

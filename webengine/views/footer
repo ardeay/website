@@ -1,0 +1,5 @@
+<div class="footerContainer">
+	<div class="structure footer">{{clippings.footer_text}}</div>
+</div>
+
+<p class="copyright">{{clippings.site_name.length()}} {{clippings.site_name}}</p>

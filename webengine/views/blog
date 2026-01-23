@@ -1,0 +1,41 @@
+<article>
+	<header>
+		<h1 class="blog-h1">{{thispage.title}}</h1>
+		<h2>{{thispage.description}}</h2>
+	</header>
+	
+<div class="page-content">
+	<div class="blog-wrap">
+		
+		
+		<h5 class="title-line">Recent Articles</h5>
+		<ul class="article-listing">
+		{{each article as post sort by date DESC limit 20}}
+		
+			<li>
+				<h5>{{post.title}}</h5>
+				<h6>{{post.sub_title}}</h6>	
+				<p>{{post.article_body.striptags(0,220)}}... <a href="{{post.getUrl()}}">read more</a></p>
+				
+				
+			</li>
+		
+		{{end-each}}
+		</ul>
+	</div>
+</div>
+
+</article>
+	
+<div class="side-bar">
+	
+	<div class="widget">
+		{{sectionlinks}}
+	</div>
+	
+	<div class="widget">
+		{{include blog-categories}}
+	</div>
+	
+
+</div>

@@ -1,0 +1,28 @@
+{{include header}}
+<div class="page-content">
+	<div class="blog-wrap">
+		<h1 class="blog-h1">{{thispage.title}}</h1>
+		<p>{{thispage.description}}</p>
+		<hr />
+		<div class="authors">
+			
+			{{each author as author sort by author.name asc}}
+				<div class="author">
+					<h5>
+						<span>
+							<a href="{{author.getUrl()}}" title="Posts by {{author.name}}" rel="author">
+								{{author.name}}
+							</a>
+						</span>
+					</h5>
+					
+					<a href="{{author.getUrl()}}">View Articles written by {{author.name}}</a>
+				
+				</div>	
+				
+			
+			{{end-each}}
+		
+		</div>
+	</div>	
+</div>

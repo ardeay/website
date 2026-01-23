@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/randyapuzzo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://www.randyapuzzo.com
+  * I am randyapuzzo (https://keybase.io/randyapuzzo) on keybase.
+  * I have a public key ASAPCcRBm6sE_EOvAACXnTXi4SDuzr0iRJjnhsSwYcSTewo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120ea183f97f386dbf895d00a933101d4eb35b9b610eb0ce2a7daa4ced6f104166a0a",
+      "host": "keybase.io",
+      "kid": "01200f09c4419bab04fc43af0000979d35e2e120eecebd224498e786c4b061c4937b0a",
+      "uid": "005bdf96225db9dcd52cdf0ac5eec119",
+      "username": "randyapuzzo"
+    },
+    "merkle_root": {
+      "ctime": 1559846223,
+      "hash": "6183491d37849713a22a426cf1309ee1b3b5b7ee7d90eff547048743dbd8854da7ace8d9831296a3afe4ae5ad77345d5d68cc30136c26a6877a45f7792e49fa5",
+      "hash_meta": "3d0d6a7c66b94dcec3ec55c64aa9a0b4bce4a5d58369a4ea1018bf775b79a31b",
+      "seqno": 5522348
+    },
+    "service": {
+      "entropy": "VwCpL/qmaiyiuAtjHb4Zd9mq",
+      "hostname": "www.randyapuzzo.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.0.0"
+  },
+  "ctime": 1559846242,
+  "expire_in": 504576000,
+  "prev": "6f2d989e6de57c083e4cb5d3432c82b15d77ae907a78be9066df6490ff8415b4",
+  "seqno": 16,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgDwnEQZurBPxDrwAAl5014uEg7s69IkSY54bEsGHEk3sKp3BheWxvYWTESpcCEMQgby2Ynm3lfAg+TLXTQyyCsV13rpB6eL6QZt9kkP+EFbTEIAWUAldIuPsfM0IAPHiDT/XeQjMahv8+uvBARNbuupPMAgHCo3NpZ8RAWlHhMs44zBTS+4yy9tguTAfqC5Ee1sE2SnX84bgKDh1ZUWtgA0rv/P8Q9DpNquZNCJfYrP1EVDQdRva5Ft3DBqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIH0QE0RuyY2uw3f6ad0NZVmRTnQ0VJpSJMtuT4GekPNo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/randyapuzzo
+
+==================================================================

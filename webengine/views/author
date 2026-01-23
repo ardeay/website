@@ -1,0 +1,61 @@
+{{include header}}
+
+<div class="content">
+	<article itemscope="" itemtype="http://schema.org/Person">
+		<header class="profile-header" style="background-image: url({{thispage.opening_image.getImage()}});">
+			<img  alt="Randy Apuzzo fun Stare" src="{{thispage.opening_image.getImage()}}" />
+			<div class="image-caption">
+				<h1 class="blog-h1" itemprop="name">{{thispage.name}}</h1>
+				<p itemprop="description">{{thispage.short_description}}</p>
+			</div>
+		</header>
+	
+	<div class="article-body">
+		
+		<div class="blog-wrap randy-background">
+			<div class="author-profile" itemprop="content">
+				(**
+				<div class="author-picture">
+					<img src="{{thispage.email.gravatar(200)}}" alt="{{thispage.name}} profile picture" class="author-photo" />
+				</div>
+				<img itemprop="image" alt="{{thispage.name}}" src="{{thispage.image.getImage(260,400,crop)}}" align="right" class="large-author" />
+				**)
+				{{include header}}
+				
+				
+	
+				
+				
+				
+				
+				<span>
+				{{thispage.description}}
+				</span>
+				
+	
+			
+			</div>
+		</div>
+		<div class="floatfix"></div>
+		
+		(**
+		<h5 class="title-line">Articles posted by <span rel="author">{{thispage.name}}</span></h5>
+		
+		<ul class="other-articles-by-author">
+			
+					{{ each article as articlefromauthor where articlefromauthor.author = '{thispage.zuid}' limit 100 sort by date }}
+					
+					<li onclick="window.location='{{articlefromauthor.getUrl()}}';">
+						<strong><a href="{{articlefromauthor.getUrl()}}">{{articlefromauthor.title}}</a></strong>
+						<p>{{articlefromauthor.sub_title}}</p>
+						
+					</li>
+					
+					{{end-each}}
+					
+		</ul>
+		**)	
+	</div>
+		
+	</article>
+</div>

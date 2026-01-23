@@ -1,0 +1,50 @@
+
+<div class="opening-description" style="background: black" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+	
+	<h6 id="test"><strong style="color: white">I like to tell computers what to do. It's great when they listen.</strong></h6>
+</div>
+
+<h1>{{this.title}}</h1>
+<div>Testing div</div>
+
+
+<div class="page-content">	
+	{{each article as post sort by date DESC limit 0,2}}
+	
+	{{if {index} == 1}}
+	<article>
+		
+		<div class="article-body homepage-short" onclick="window.location='{{post.getUrl()}}'">
+			<img align="left" src="{{ post.image.getImage(300,500,crop) }}" alt="{{post.title}} image" />
+
+			
+			(**<h3><timestamp pubdate date="{{ post.date.date(Y-m-d) }}">{{ post.date.date(F jS, Y) }}</timestamp></h3>**)
+			<p class="homepage-short">
+				<strong><a href="{{post.getUrl()}}" title="{{post.title}} article page">{{post.title}}</a></strong>
+				{{post.article_body.striptags(0,600)}}... <a href="{{post.getUrl()}}">Read Full Post</a></p>
+			<div class="floatfix"></div>
+		</div>
+		
+		
+	</article>
+	{{ else }}
+	<article>
+		
+		<div class="article-body homepage-short" onclick="window.location='{{post.getUrl()}}'">
+			<img align="left" src="{{ post.image.getImage(300,300,crop) }}" alt="{{post.title}} image" />
+			
+			(**<h3><timestamp pubdate date="{{ post.date.date(Y-m-d) }}">{{ post.date.date(F jS, Y) }}</timestamp></h3>**)
+			<p class="homepage-short">
+				<strong><a href="{{post.getUrl()}}" title="{{post.title}} article page">{{post.title}}</a></strong>
+				{{post.article_body.striptags(0,250)}}... <a href="{{post.getUrl()}}">Read Full Post</a></p>
+			<div class="floatfix"></div>
+		</div>
+		
+	</article>
+	{{end-if}}
+	
+	
+	<br/>
+	{{end-each}}
+	
+</div>

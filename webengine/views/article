@@ -1,0 +1,101 @@
+<div itemscope="" itemtype="http://schema.org/BlogPosting">
+	{{include header}}
+
+	<div class="content">
+		<div id="big-image">
+			<img itemprop="image" src="{{this.image.getImage()}}" class="main" width="100%"  alt="{{this.title}} image" />
+			{{if {this.caption} }} 
+			<div class="caption">{{this.caption}}</div>
+			{{end-if}}
+			<div id="big-image-triangle"></div>
+		</div>
+		
+		<div class="page-content post" >
+			<div class="blog-wrap">	
+										
+				<article class="blog-article">
+					
+					<header class="article-header">
+						<hgroup>
+							<h1 itemprop="headline" class="blog-h1">{{this.title}}</h1>
+							<h2 itemprop="alternativeHeadline">{{this.sub_title}}</h2>
+							<div class="top-social-button">
+						(**<a  class="share-button custom-popup-button large-share" href='https://twitter.com/intent/tweet?url={{api.tinyurl.shorten(http://{site.domain.encodeurl()}{this.getUrl()})}}&text="{{this.title}}" by @RandyApuzzo&hashtags={{$hash}}'  target="_blank" rel="nofollow" data-related="randyapuzzo"><span class="icon-twitter"></span></a>
+						<a class="share-button custom-popup-button facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://{{site.domain.encodeurl()}}{{this.getUrl()}}&t={{this.title}}"><span class="icon-facebook"></span></a>
+						<a class="share-button custom-popup-button gplus" href="https://plus.google.com/share?url={{site.domain.encodeurl()}}{{this.getUrl()}}&t={{this.title}}"><span class="icon-google-plus"></span></a>**)
+							</div>
+							<h3>
+								<timestamp pubdate date="{{ this.date.date(Y-m-d) }}">{{ this.date.date(n.j.Y) }}</timestamp>
+							</h3>
+						</hgroup>
+					</header>
+					
+					<div class="article-body" itemprop="articleBody">
+						{{this.article_body.length()}}
+						{{this.article_body}}
+						<div class="comment">
+							
+							{{each media.{this.images} as img}}							
+							<img style="padding:20px;" src="{{img.image.getImage(400,300,crop)}}" alt="{{img.image.getimagetitle()}}" />
+							<p>{{img.image.getimagetitle()}}</p>							
+							{{end-each}}
+							
+						</div>
+						
+						
+						{{each images as image where image.article_connection = '{this.zuid}' order by image.sort_order }}
+						<div class="article-image" itemscope="" itemtype="http://schema.org/CreativeWork">
+							<a href="{{image.img.getImage()}}" itemprop="image" data-milkbox="gall1" title="<strong>{{image.title.htmlentities()}}</strong>{{image.description.htmlentities()}}">	
+								<img alt="{{image.title}}" itemprop="thumbnailUrl"  src="{{image.img.getImage(160,160,crop) }}"  />
+							</a>
+							<div><strong itemprop="name">{{image.title}}</strong> by <span itemprop="author">Randy Apuzzo</span></div>
+							<p itemprop="description">{{image.description_raw}}</p>
+						</div>
+						{{end-each}}
+						
+						
+					</div>
+					
+					
+					<footer class="article-footer"> 
+						
+						
+							<div class="share">
+								<script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
+							</div>
+						
+						
+						{{if {this.tags} > 0 }}
+						<div class="tags">
+							
+							<a rel="bookmark" href="{{this.getUrl()}}" title="{{this.title}}"><span class="icon-link"></span> Permalink</a>
+							{{each tag as t where FIND_IN_SET(t.zuid,'{this.tags}') }}
+							<a href="{{t.getUrl()}}" rel="tag"><span class="icon-tag"></span> {{t.name}}</a>
+							{{$hash = {t.name.replace( ,)},{$hash} }}
+							{{end-each}}
+							
+						</div>
+						{{end-if}}
+						{{blocks({this.page_block})}}
+						
+						
+						<!--
+						<a class="share-button custom-popup-button gplus" href="https://plus.google.com/share?url={{site.domain.encodeurl()}}{{this.getUrl()}}&t={{this.title}}"><span class="icon-google-plus"></span></a>-->
+					</footer>
+					<div class="author-footer">
+					{{include email-signup}}
+					
+					{{include blog-author-short}}
+					</div>
+				</article>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	window.addEvent('domready', function() {
+		//$('comments').load('/ajax/twitter-comments/?hash=rda{{this.zuid}}');
+	});
+</script>

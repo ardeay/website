@@ -1,0 +1,55 @@
+<div class="side-bar">
+
+	<div class="widget">
+		{{sectionlinks}}
+	</div>
+	
+	<div class="widget">
+		{{include blog-categories}}
+	</div>
+	
+	<div class="widget">
+		{{include blog-recent-articles}}
+	</div>
+	
+
+</div>
+
+
+<div class="page-content">
+	<div class="blog-wrap">	
+		<h1 class="blog-h1">{{thispage.title}}</h1>
+		<div class="page-description">{{thispage.description}}</div>
+		<hr />
+		<form enctype="multipart/form-data" action="https://airtabletable.herokuapp.com/" method="POST">
+			
+			<!-- MAX_FILE_SIZE must precede the file input field -->
+			<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+		
+			<br>
+			<input type="text" name="name" value="" />
+			
+			<!-- RETURN_URL must precede the file input field, used after file is uploaded -->
+			<input type="hidden" name="redirect_target" value="http://www.randyapuzzo.com/" />
+			
+			
+			<!-- Name of input element determines name in $_FILES array -->
+			<label>Send this file: <input name="userfile" type="file" /></label>
+			<br>
+			<input type="submit" value="Send File" />
+		</form>
+		
+		<ul class="categories">
+			
+			{{each category as category sort by category.name asc limit 100}}
+				
+				<li onclick="window.location='{{category.getUrl()}}';">
+					<a href="{{category.getUrl()}}">{{category.name}}</a>		
+				</li>
+			
+			{{end-each}}
+		
+		</ul>
+
+	</div>
+</div>

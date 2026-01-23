@@ -1,0 +1,14 @@
+<h2>Recent Articles</h2>
+<ul class="recent-articles">
+	
+	{{each article as recentarticle limit 3 sort by recentarticle.date desc}}
+		
+		<li onclick="window.location='{{recentarticle.getUrl()}}';">
+			<strong><a href="{{recentarticle.getUrl()}}">{{recentarticle.title}}</a></strong> posted on {{recentarticle.date.date(m-d-Y)}}
+			<p>{{recentarticle.sub_title}}</p>
+		
+		</li>
+	
+	{{end-each}}
+
+</ul>
