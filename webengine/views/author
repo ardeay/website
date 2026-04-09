@@ -1,61 +1,39 @@
-{{include header}}
 
-<div class="content">
-	<article itemscope="" itemtype="http://schema.org/Person">
-		<header class="profile-header" style="background-image: url({{thispage.opening_image.getImage()}});">
-			<img  alt="Randy Apuzzo fun Stare" src="{{thispage.opening_image.getImage()}}" />
-			<div class="image-caption">
-				<h1 class="blog-h1" itemprop="name">{{thispage.name}}</h1>
-				<p itemprop="description">{{thispage.short_description}}</p>
-			</div>
-		</header>
-	
-	<div class="article-body">
-		
-		<div class="blog-wrap randy-background">
-			<div class="author-profile" itemprop="content">
-				(**
-				<div class="author-picture">
-					<img src="{{thispage.email.gravatar(200)}}" alt="{{thispage.name}} profile picture" class="author-photo" />
+<section class="grid gap-8">
+	<article class="brutal-card overflow-hidden" itemscope="" itemtype="http://schema.org/Person">
+		<header class="relative bg-stijl-ink text-white">
+			<div class="grid gap-0 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+				<div class="px-6 py-12 sm:px-10 lg:px-14">
+					<h1 class="text-5xl uppercase tracking-[0.18em]" itemprop="name">{{thispage.name}}</h1>
+					<p class="mt-4 max-w-2xl text-lg leading-relaxed text-white/90" itemprop="description">{{thispage.short_description}}</p>
+					<div class="mt-8 h-2 w-32 bg-stijl-red"></div>
 				</div>
-				<img itemprop="image" alt="{{thispage.name}}" src="{{thispage.image.getImage(260,400,crop)}}" align="right" class="large-author" />
-				**)
-				{{include header}}
-				
-				
-	
-				
-				
-				
-				
-				<span>
-				{{thispage.description}}
-				</span>
-				
-	
-			
+				<div class="min-h-[320px]">
+					<img class="h-full w-full object-cover" alt="{{thispage.name}}" src="{{thispage.opening_image.getImage()}}" />
+				</div> 
 			</div>
+			<div class="h-2 w-full bg-gradient-to-r from-[var(--stijl-red)] via-[var(--stijl-yellow)] to-[var(--stijl-blue)]"></div>
+		</header> 
+
+		<div class="bg-white px-6 py-10 sm:px-10 lg:px-14" itemprop="content">
+			<div class="article-body">
+				{{thispage.description}}
+			</div> 
 		</div>
-		<div class="floatfix"></div>
-		
-		(**
-		<h5 class="title-line">Articles posted by <span rel="author">{{thispage.name}}</span></h5>
-		
-		<ul class="other-articles-by-author">
-			
-					{{ each article as articlefromauthor where articlefromauthor.author = '{thispage.zuid}' limit 100 sort by date }}
-					
-					<li onclick="window.location='{{articlefromauthor.getUrl()}}';">
-						<strong><a href="{{articlefromauthor.getUrl()}}">{{articlefromauthor.title}}</a></strong>
-						<p>{{articlefromauthor.sub_title}}</p>
-						
-					</li>
-					
-					{{end-each}}
-					
-		</ul>
-		**)	
-	</div>
-		
 	</article>
-</div>
+
+	<section class="brutal-rail bg-white px-6 py-8 sm:px-10 lg:px-14">
+		<div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+			<h2 class="text-xl uppercase tracking-[0.16em]">Articles posted by <span rel="author">{{thispage.name}}</span></h2>
+			<div class="h-2 w-24 bg-stijl-blue"></div>
+		</div>
+		<div class="mt-8 grid gap-4 md:grid-cols-2">
+			{{ each article as articlefromauthor where articlefromauthor.author = '{thispage.zuid}' limit 100 sort by date }}
+			<article class="brutal-card cursor-pointer p-4" onclick="window.location='{{articlefromauthor.getUrl()}}';">
+				<strong class="block text-base uppercase tracking-[0.08em]"><a href="{{articlefromauthor.getUrl()}}">{{articlefromauthor.title}}</a></strong>
+				<p class="mt-2 text-sm leading-relaxed">{{articlefromauthor.sub_title}}</p>
+			</article>
+			{{end-each}}
+		</div>
+	</section>
+</section>

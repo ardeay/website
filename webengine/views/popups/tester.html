@@ -1,0 +1,134 @@
+<script>
+var defined = {
+    "name": "tester",
+    "slug": "tester",
+    "layout": "center",
+    "overlay": true,
+    "overlayColor": "rgba(0,0,0,0.5)",
+    "animation": "fadeIn",
+    "width": "600px",
+    "closeButton": true,
+    "trigger": {
+        "type": "on_scroll",
+        "delay": 0
+    },
+    "frequency": "always",
+    "elements": [
+        {
+            "id": "mmydg9igfhc0",
+            "type": "heading",
+            "text": "Your Heading",
+            "tag": "h2",
+            "color": "#333",
+            "fontSize": "1.5rem",
+            "align": "center"
+        },
+        {
+            "id": "mmydga1s3eci",
+            "type": "text",
+            "text": "Your text goes here. Add a compelling message to engage visitors.",
+            "color": "#666",
+            "fontSize": "1rem",
+            "align": "center"
+        },
+        {
+            "id": "mmydgbvjti06",
+            "type": "image",
+            "src": "https://randyapuzzo.media.zestyio.com/forms-preview.png",
+            "alt": "",
+            "align": "center",
+            "borderRadius": "0"
+        },
+        {
+            "id": "mmydgxltfmg6",
+            "type": "button",
+            "text": "Click Here",
+            "href": "",
+            "openNewTab": false,
+            "bgColor": "#EC4A0A",
+            "textColor": "#fff",
+            "borderRadius": "4px",
+            "fontSize": "1rem",
+            "align": "center"
+        }
+    ]
+};
+</script>
+<style>
+  @keyframes popupIn{from{opacity:0}to{opacity:1}}
+  .zesty-popup-overlay { position:fixed;top:0;left:0;width:100%;height:100%;z-index:999999;background:rgba(0,0,0,0.5); }
+  .zesty-popup-container { position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;max-width:90vw;background:#fff;border-radius:8px;padding:2rem;box-shadow:0 20px 60px rgba(0,0,0,0.3);z-index:1000000;animation:popupIn 0.3s ease-out;box-sizing:border-box;position:relative; }
+  .zesty-popup-container img { max-width:100%; }
+</style>
+<div class="zesty-popup-overlay" id="zesty-popup-tester">
+  <div class="zesty-popup-container">
+    <button onclick="this.closest('.zesty-popup-overlay').remove()" style="position:absolute;top:0.75rem;right:0.75rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#999;line-height:1;padding:0.25rem">&times;</button>
+<h2 style="margin:0 0 0.75rem;color:#333;font-size:1.5rem;text-align:center">Your Heading</h2>
+<p style="margin:0 0 1rem;color:#666;font-size:1rem;text-align:center;line-height:1.6">Your text goes here. Add a compelling message to engage visitors.</p>
+<div style="text-align:center;margin:0 0 1rem"><img src="https://randyapuzzo.media.zestyio.com/forms-preview.png" alt="" style="max-width:100%;height:auto;border-radius:0" /></div>
+<div style="text-align:center;margin:0 0 1rem"><button style="display:inline-block;padding:0.75rem 2rem;background:#EC4A0A;color:#fff;border:none;border-radius:4px;font-size:1rem;font-weight:600;cursor:pointer;text-decoration:none;text-align:center">Click Here</button></div>
+  </div>
+</div>
+<script>
+(function(){
+  var cfg = defined;
+  var overlay = document.getElementById('zesty-popup-' + cfg.slug);
+  if (!overlay) return;
+
+  // Frequency check
+  var storageKey = 'zesty_popup_' + cfg.slug;
+  if (cfg.frequency === 'once') {
+    if (localStorage.getItem(storageKey)) { overlay.remove(); return; }
+    localStorage.setItem(storageKey, '1');
+  } else if (cfg.frequency === 'session') {
+    if (sessionStorage.getItem(storageKey)) { overlay.remove(); return; }
+    sessionStorage.setItem(storageKey, '1');
+  }
+
+  // Hide initially, show based on trigger
+  overlay.style.display = 'none';
+
+  function showPopup() { overlay.style.display = ''; }
+
+  var trigger = cfg.trigger || { type: 'on_load', delay: 0 };
+
+  if (trigger.type === 'on_load') {
+    setTimeout(showPopup, (trigger.delay || 0) * 1000);
+  } else if (trigger.type === 'on_scroll') {
+    var pct = trigger.scrollPercent || 50;
+    function checkScroll() {
+      var scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      if (scrolled >= pct) { showPopup(); window.removeEventListener('scroll', checkScroll); }
+    }
+    window.addEventListener('scroll', checkScroll);
+  } else if (trigger.type === 'on_exit') {
+    document.addEventListener('mouseleave', function handler(e) {
+      if (e.clientY < 0) { showPopup(); document.removeEventListener('mouseleave', handler); }
+    });
+  } else if (trigger.type === 'on_click') {
+    var sel = trigger.selector || '';
+    if (sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        el.addEventListener('click', function() { showPopup(); });
+      });
+    }
+  } else if (trigger.type === 'after_inactivity') {
+    var timer;
+    function resetTimer() {
+      clearTimeout(timer);
+      timer = setTimeout(showPopup, (trigger.inactivitySeconds || 30) * 1000);
+    }
+    ['mousemove','keydown','scroll','touchstart'].forEach(function(evt) {
+      document.addEventListener(evt, resetTimer);
+    });
+    resetTimer();
+  }
+
+  // Close on overlay click
+  if (cfg.overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) overlay.remove();
+    });
+  }
+})();
+</script>

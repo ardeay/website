@@ -1,101 +1,95 @@
-<div itemscope="" itemtype="http://schema.org/BlogPosting">
-	{{include header}}
+<article itemscope itemtype="https://schema.org/BlogPosting" class="w-full font-body bg-white brutal-rail">
+	<meta itemprop="mainEntityOfPage" content="{{this.getUrl()}}">
+	<meta itemprop="datePublished" content="{{ this.date.date(Y-m-d) }}">
+	<meta itemprop="dateModified" content="{{ this.date.date(Y-m-d) }}">
+	<div itemprop="author" itemscope itemtype="https://schema.org/Person">
+		<meta itemprop="name" content="Randy Apuzzo">
+	</div>
 
-	<div class="content">
-		<div id="big-image">
-			<img itemprop="image" src="{{this.image.getImage()}}" class="main" width="100%"  alt="{{this.title}} image" />
-			{{if {this.caption} }} 
-			<div class="caption">{{this.caption}}</div>
-			{{end-if}}
-			<div id="big-image-triangle"></div>
-		</div>
-		
-		<div class="page-content post" >
-			<div class="blog-wrap">	
-										
-				<article class="blog-article">
-					
-					<header class="article-header">
-						<hgroup>
-							<h1 itemprop="headline" class="blog-h1">{{this.title}}</h1>
-							<h2 itemprop="alternativeHeadline">{{this.sub_title}}</h2>
-							<div class="top-social-button">
-						(**<a  class="share-button custom-popup-button large-share" href='https://twitter.com/intent/tweet?url={{api.tinyurl.shorten(http://{site.domain.encodeurl()}{this.getUrl()})}}&text="{{this.title}}" by @RandyApuzzo&hashtags={{$hash}}'  target="_blank" rel="nofollow" data-related="randyapuzzo"><span class="icon-twitter"></span></a>
-						<a class="share-button custom-popup-button facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://{{site.domain.encodeurl()}}{{this.getUrl()}}&t={{this.title}}"><span class="icon-facebook"></span></a>
-						<a class="share-button custom-popup-button gplus" href="https://plus.google.com/share?url={{site.domain.encodeurl()}}{{this.getUrl()}}&t={{this.title}}"><span class="icon-google-plus"></span></a>**)
-							</div>
-							<h3>
-								<timestamp pubdate date="{{ this.date.date(Y-m-d) }}">{{ this.date.date(n.j.Y) }}</timestamp>
-							</h3>
-						</hgroup>
-					</header>
-					
-					<div class="article-body" itemprop="articleBody">
-						{{this.article_body.length()}}
-						{{this.article_body}}
-						<div class="comment">
-							
-							{{each media.{this.images} as img}}							
-							<img style="padding:20px;" src="{{img.image.getImage(400,300,crop)}}" alt="{{img.image.getimagetitle()}}" />
-							<p>{{img.image.getimagetitle()}}</p>							
-							{{end-each}}
-							
-						</div>
-						
-						
+	<figure class="overflow-hidden bg-white">
+		<img itemprop="image" src="{{this.image.getImage()}}" class="w-full max-h-[520px] object-cover" alt="{{this.title}} image" />
+		{{if {this.caption} }}
+		<figcaption class="border-b-[3px] border-stijl-ink bg-stijl-concrete/40 px-6 py-4 text-xs uppercase tracking-[0.25em]">
+			{{this.caption}}
+		</figcaption> 
+		{{end-if}}
+	</figure>
+ 
+	<div class="px-6 py-10">
+		<div class="mx-auto max-w-4xl">
+			<header class="bg-white">
+				<div class="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.25em]">
+					<span class="h-2 w-10 bg-stijl-red"></span>
+					<span class="h-2 w-10 bg-stijl-yellow"></span>
+					<span class="h-2 w-10 bg-stijl-blue"></span>
+					<time datetime="{{ this.date.date(Y-m-d) }}" class="ml-auto text-[10px]">{{ this.date.date(n.j.Y) }}</time>
+				</div>
+				<h1 itemprop="headline" class="mt-5 font-display text-4xl uppercase tracking-[0.18em]">{{this.title}}</h1>
+				{{if {this.sub_title} }}
+				<h2 itemprop="alternativeHeadline" class="mt-3 text-lg uppercase tracking-[0.2em]">{{this.sub_title}}</h2>
+				{{/if}}
+			</header> 
+
+			<section class="bg-white pt-8">
+				<div itemprop="articleBody" class="articleBody space-y-6 leading-[1.5]">
+					{{this.article_body}}
+
+					{{if {this.images} }}
+					<div class="grid gap-4 sm:grid-cols-2">
+						{{!each media.{this.images} as img}}
+						<figure class="bg-white p-3">
+							<img src="{{img.image.getImage(400,300,crop)}}" alt="{{img.image.getimagetitle()}}" class="w-full" />
+							<figcaption class="mt-3 text-xs uppercase tracking-[0.2em]">{{img.image.getimagetitle()}}</figcaption>
+						</figure>
+						{{end-each}}
+					</div>
+					{{/if}}
+
+					<div class="grid gap-4 sm:grid-cols-2">
 						{{each images as image where image.article_connection = '{this.zuid}' order by image.sort_order }}
-						<div class="article-image" itemscope="" itemtype="http://schema.org/CreativeWork">
-							<a href="{{image.img.getImage()}}" itemprop="image" data-milkbox="gall1" title="<strong>{{image.title.htmlentities()}}</strong>{{image.description.htmlentities()}}">	
-								<img alt="{{image.title}}" itemprop="thumbnailUrl"  src="{{image.img.getImage(160,160,crop) }}"  />
+						<div itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject" class="bg-white p-3">
+							<a href="{{image.img.getImage()}}" itemprop="contentUrl" data-milkbox="gall1" title="<strong>{{image.title.htmlentities()}}</strong>{{image.description.htmlentities()}}">
+								<img alt="{{image.title}}" itemprop="thumbnailUrl" src="{{image.img.getImage(320,240,crop) }}" class="w-full" />
 							</a>
-							<div><strong itemprop="name">{{image.title}}</strong> by <span itemprop="author">Randy Apuzzo</span></div>
-							<p itemprop="description">{{image.description_raw}}</p>
+							<div class="mt-3 text-xs uppercase tracking-[0.2em]">
+								<strong itemprop="name">{{image.title}}</strong>
+							</div>
+							<p itemprop="description" class="mt-2 text-sm">{{image.description_raw}}</p>
 						</div>
 						{{end-each}}
-						
-						
 					</div>
+				</div>
+			</section> 
+
+			<footer class="bg-white pt-10">
+				<div class="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.25em]">
+					<span class="font-display text-lg">Share</span>
 					
-					
-					<footer class="article-footer"> 
-						
-						
-							<div class="share">
-								<script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
-							</div>
-						
-						
-						{{if {this.tags} > 0 }}
-						<div class="tags">
-							
-							<a rel="bookmark" href="{{this.getUrl()}}" title="{{this.title}}"><span class="icon-link"></span> Permalink</a>
-							{{each tag as t where FIND_IN_SET(t.zuid,'{this.tags}') }}
-							<a href="{{t.getUrl()}}" rel="tag"><span class="icon-tag"></span> {{t.name}}</a>
-							{{$hash = {t.name.replace( ,)},{$hash} }}
-							{{end-each}}
-							
-						</div>
-						{{end-if}}
-						{{blocks({this.page_block})}}
-						
-						
-						<!--
-						<a class="share-button custom-popup-button gplus" href="https://plus.google.com/share?url={{site.domain.encodeurl()}}{{this.getUrl()}}&t={{this.title}}"><span class="icon-google-plus"></span></a>-->
-					</footer>
-					<div class="author-footer">
-					{{include email-signup}}
-					
+				</div>
+
+				{{if {this.tags} > 0 }}
+				<div class="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.25em]">
+					<a rel="bookmark" href="{{this.getUrl()}}" title="{{this.title}}" class="border-b-2 border-transparent hover:border-stijl-ink">Permalink</a>
+					{{each tag as t where FIND_IN_SET(t.zuid,'{this.tags}') }}
+					<a href="{{t.getUrl()}}" rel="tag" class="border-b-2 border-transparent hover:border-stijl-ink">{{t.name}}</a>
+					{{$hash = {t.name.replace( ,)},{$hash} }}
+					{{end-each}}
+				</div>
+				{{end-if}}
+			</footer>
+
+			<div class="bg-white pt-10">
+				{{include email-signup}}
+				<div class="mt-6">
 					{{include blog-author-short}}
-					</div>
-				</article>
-				
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</article>
 
 <script type="text/javascript">
-	window.addEvent('domready', function() {
+	
 		//$('comments').load('/ajax/twitter-comments/?hash=rda{{this.zuid}}');
-	});
+	
 </script>

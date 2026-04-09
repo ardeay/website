@@ -1,4 +1,4 @@
-{{include header}}
+
 <div class="page-content">
 	<div class="blog-wrap">
 		<h1 class="blog-h1">{{thispage.title}}</h1>

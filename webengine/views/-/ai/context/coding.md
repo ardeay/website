@@ -1,0 +1,1 @@
+Tailwind UI for all CSS and styling. Minimalist approach. Font awesome 6 (free edition) for icons. Its built on Zesty.io, so Zesty.io Parsley for dynamic content access.

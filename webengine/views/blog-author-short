@@ -3,7 +3,7 @@
 	{{each author as author where author.zuid = '{this.author}' limit 1}}
 		
 		<div class="author-picture">
-			<img data-src="{{author.email.gravatar(100)}}" alt="{{author.name}} profile picture" class="author-photo" />
+			<img src="{{author.image.getImage(100)}}" alt="{{author.name}} profile picture" class="author-photo" />
 		</div>
 		
 		<div class="author-bio">

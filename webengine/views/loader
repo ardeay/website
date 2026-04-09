@@ -1,28 +1,323 @@
-{{if {!page.image} !== "" }}
 
-	{{current_view}}
+<script src="https://cdn.tailwindcss.com"></script>
 
-{{else}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+<!-- Optional: Preload fonts/icons you use -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+	tailwind.config = {
+		theme: { 
+			extend: {
+				fontFamily: {
+					display: ['"Staatliches"', 'sans-serif'],
+					body: ['"Source Sans 3"', 'sans-serif']
+				}
+			}  
+		}   
+	}
+</script> 
+<style> 
+	:root {
+		--stijl-red: #e33a2f;
+		--stijl-blue: #2455d6; 
+		--stijl-yellow: #f3c22f;
+		--stijl-ink: #141414;
+		--stijl-paper: #f4f1ea;
+		--stijl-ice: #faf9f6;
+		--stijl-concrete: #d9d2c9;
+	}
+	.bg-stijl {
+		background-color: var(--stijl-paper);
+		background-image:
+			linear-gradient(rgba(20, 20, 20, 0.07) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(20, 20, 20, 0.07) 1px, transparent 1px),
+			radial-gradient(rgba(20, 20, 20, 0.08) 1px, transparent 1px);
+		background-size: 24px 24px, 24px 24px, 12px 12px;
+	}
+	.bg-stijl-red { background-color: var(--stijl-red); }
+	.bg-stijl-blue { background-color: var(--stijl-blue); }
+	.bg-stijl-yellow { background-color: var(--stijl-yellow); }
+	.bg-stijl-concrete { background-color: var(--stijl-concrete); }
+	div[class*="bg-"] {
+		transition: background-color 500ms ease;
+	}
+	.border-stijl-ink { border-color: var(--stijl-ink); }
+	.text-stijl-ink { color: var(--stijl-ink); }
+	.bg-stijl-ink {
+		background: var(--stijl-ink);
+	}
+	.brutal-card {
+		border: 3px solid var(--stijl-ink);
+		box-shadow: 8px 8px 0 var(--stijl-ink);
+		background: var(--stijl-ice);
+	}
+	.brutal-rail {
+		border: 3px solid var(--stijl-ink);
+		box-shadow: 6px 6px 0 var(--stijl-ink);
+		background: white;
+	}
+	.brutal-chip {
+		border: 2px solid var(--stijl-ink);
+		box-shadow: 3px 3px 0 var(--stijl-ink);
+		background: white;
+	}
+	.type-kicker {
+		font-family: "Staatliches", sans-serif;
+		letter-spacing: 0.24em;
+		text-transform: uppercase;
+	}
+	.type-tight {
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+	.opening-description {
+		position: relative;
+		background: var(--stijl-ink);
+		color: #f5f2ea !important;
+		padding: 3.25rem 2.5rem;
+		border: 3px solid var(--stijl-ink);
+		box-shadow: 10px 10px 0 var(--stijl-ink);
+		font-size: 4.1rem;
+		line-height: 1.6;
+		overflow: hidden;
+	}
+	.opening-description::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(90deg, transparent 0 60%, rgba(244, 241, 234, 0.06) 60% 100%),
+			linear-gradient(0deg, transparent 0 70%, rgba(244, 241, 234, 0.06) 70% 100%);
+		pointer-events: none;
+	}
+	.opening-description::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 10px;
+		background: linear-gradient(90deg, var(--stijl-red) 0 45%, var(--stijl-yellow) 45% 75%, var(--stijl-blue) 75% 100%);
+	}
+	.page-content article {
+		margin-bottom: 1.5rem;
+	}
+	.page-content .article-body {
+		background: white;
+		border: 3px solid var(--stijl-ink);
+		box-shadow: 6px 6px 0 var(--stijl-ink);
+		padding: 1.25rem;
+	}
+	.page-content .article-body p {
+		line-height: 1.65;
+	}
+	.page-content .article-body a {
+		text-decoration: none;
+		border-bottom: 2px solid var(--stijl-yellow);
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Staatliches", sans-serif;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+	a {
+		transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+	}
+</style>
 
-	{{include header}}
-	
+<div class="min-h-screen bg-stijl font-body text-stijl-ink">
+	<div class="mx-auto max-w-[1400px] px-4 pb-14 pt-6 sm:px-6 lg:px-10">
+		<div class="grid items-start gap-8 lg:grid-cols-[220px_minmax(0,1fr)]">
+			<aside class="order-2 brutal-card lg:order-none lg:sticky lg:top-8 lg:self-start">
+				<div class="grid gap-6 p-5">
+					<div class="flex items-center justify-between">
+						<div class="h-16 w-16 rounded-full border-[3px] border-stijl-ink bg-white"></div>
+						<div class="grid gap-1">
+							<span class="h-3 w-10 bg-stijl-red"></span>
+							<span class="h-3 w-10 bg-stijl-yellow"></span>
+							<span class="h-3 w-10 bg-stijl-blue"></span>
+						</div>
+					</div>
+					<nav class="grid gap-3 text-xs uppercase tracking-[0.3em]">
+						<a href="/" class="border-b-2 border-transparent hover:border-stijl-ink">Recent Articles</a>
+						<a href="{{truePath(512)}}" class="border-b-2 border-transparent hover:border-stijl-ink">About</a>
+						<a href="{{truePath(565)}}" class="border-b-2 border-transparent hover:border-stijl-ink">Time Capsule</a>
+						<a href="/portfolio/" class="border-b-2 border-transparent hover:border-stijl-ink">Images</a>
+					</nav>
+					<div class="grid gap-2 text-[10px] uppercase tracking-[0.3em] text-stijl-ink/60">
+						<span>Typography Studio</span>
+						<span>Founded 2012</span>
+					</div>
+				</div>
+				<div class="grid grid-cols-2 border-t-[3px] border-stijl-ink">
+					<div class="h-8 bg-stijl-yellow"></div>
+					<div class="h-8 bg-white"></div>
+				</div>
+			</aside>
 
-	<div class="content">
-		
-			{{current_view}} 
+			<div class="order-1 grid gap-8 lg:order-none">
+				{{include /components/header.html}}
+
+				<main class="grid gap-8">
+					
+						{{current_view}}
+					
+				</main>
+			</div>
+		</div>
+
+		{{include /components/footer.html}}
 	</div>
+</div>
 
-{{end-if}}
-
-{{include footer}}
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/gh/zesty-io/explorer@cdn/dist/main.dev.js"
-      defer="defer"
-    ></script>
-
-<script type="text/javascript" src="//use.typekit.net/oce6wpo.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <!-- studio communicator -->
 <script type="text/javascript" src="/communicator.js"></script>
+ 
+<script>
+	(function () {
+		function isNearBlackOrWhite(r, g, b) {
+			const max = Math.max(r, g, b);
+			const min = Math.min(r, g, b);
+			const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b);
+			if (lum < 35 || lum > 235) return true;
+			if (max - min < 15 && (lum < 80 || lum > 180)) return true;
+			return false;
+		}
+
+		function quantize(r, g, b, step) {
+			return [
+				Math.round(r / step) * step,
+				Math.round(g / step) * step,
+				Math.round(b / step) * step
+			];
+		}
+
+		function rgbToHex(r, g, b) {
+			return (
+				"#" +
+				[r, g, b]
+					.map((v) => v.toString(16).padStart(2, "0"))
+					.join("")
+			);
+		}
+
+		function extractTopColors(image) {
+			const canvas = document.createElement("canvas");
+			const ctx = canvas.getContext("2d", { willReadFrequently: true });
+			const sampleSize = 120;
+			canvas.width = sampleSize;
+			canvas.height = sampleSize;
+			ctx.drawImage(image, 0, 0, sampleSize, sampleSize);
+			const { data } = ctx.getImageData(0, 0, sampleSize, sampleSize);
+
+			const bins = new Map();
+			const step = 24;
+			for (let i = 0; i < data.length; i += 4) {
+				const r = data[i];
+				const g = data[i + 1];
+				const b = data[i + 2];
+				const a = data[i + 3];
+				if (a < 200) continue;
+				if (isNearBlackOrWhite(r, g, b)) continue;
+				const [qr, qg, qb] = quantize(r, g, b, step);
+				const key = `${qr},${qg},${qb}`;
+				bins.set(key, (bins.get(key) || 0) + 1);
+			}
+
+			const candidates = [...bins.entries()]
+				.sort((a, b) => b[1] - a[1])
+				.slice(0, 28)
+				.map(([key]) => key.split(",").map((v) => Number(v)));
+
+			return pickBalancedColors(candidates, 3);
+		}
+
+		function colorDistance(a, b) {
+			const dr = a[0] - b[0];
+			const dg = a[1] - b[1];
+			const db = a[2] - b[2];
+			return Math.sqrt(dr * dr + dg * dg + db * db);
+		}
+
+		function colorSaturation(c) {
+			const max = Math.max(c[0], c[1], c[2]);
+			const min = Math.min(c[0], c[1], c[2]);
+			return max - min;
+		}
+
+		function pickBalancedColors(candidates, count) {
+			if (!candidates || candidates.length === 0) return [];
+			const pool = candidates.slice();
+			const picked = [pool.slice().sort((a, b) => colorSaturation(b) - colorSaturation(a))[0]];
+			while (picked.length < count && picked.length < pool.length) {
+				let best = null;
+				let bestScore = -Infinity;
+				for (const cand of pool) {
+					if (picked.includes(cand)) continue;
+					const distances = picked.map((p) => colorDistance(p, cand));
+					const minDist = Math.min(...distances);
+					const avgDist = distances.reduce((a, b) => a + b, 0) / distances.length;
+					const score = minDist * 0.45 + avgDist * 0.35 + colorSaturation(cand) * 0.2;
+					if (score > bestScore) {
+						bestScore = score;
+						best = cand;
+					}
+				}
+				if (!best) break;
+				picked.push(best);
+			}
+
+			return picked.slice(0, count);
+		}
+
+		function applyColors(colors) {
+			if (!colors || colors.length === 0) return;
+			const root = document.documentElement;
+			const [c1, c2, c3] = colors;
+			if (c1) root.style.setProperty("--stijl-red", rgbToHex(...c1));
+			if (c2) root.style.setProperty("--stijl-blue", rgbToHex(...c2));
+			if (c3) root.style.setProperty("--stijl-yellow", rgbToHex(...c3));
+		}
+
+		function loadImageForAnalysis(src) {
+			return new Promise((resolve, reject) => {
+				const img = new Image();
+				img.crossOrigin = "anonymous";
+				img.onload = () => resolve(img);
+				img.onerror = reject;
+				img.src = src;
+			});
+		}
+
+		async function getReadyImage(imgEl) {
+			if (!imgEl) return null;
+			if (imgEl.complete && imgEl.naturalWidth > 0) return imgEl;
+			try {
+				await imgEl.decode();
+				return imgEl;
+			} catch (err) {
+				return new Promise((resolve) => {
+					imgEl.addEventListener("load", () => resolve(imgEl), { once: true });
+					imgEl.addEventListener("error", () => resolve(null), { once: true });
+				});
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", async function () {
+			const firstImage = document.querySelector(".articleBody img, .article-body img, article img");
+			const readyImg = await getReadyImage(firstImage);
+			if (!readyImg || !readyImg.src) return;
+			try {
+				const img = await loadImageForAnalysis(readyImg.currentSrc || readyImg.src);
+				const colors = extractTopColors(img);
+				applyColors(colors);
+			} catch (err) {
+				// If CORS blocks canvas, do nothing and keep defaults.
+			}
+		});
+	})();
+</script>

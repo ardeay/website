@@ -1,0 +1,1 @@
+Use 10th grade level writing. Include concepts and personal experiences. When speaking to something historical, draw relations to modern day.

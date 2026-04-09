@@ -1,0 +1,1 @@
+Use the artistic style is umi ink as an outline, pure black, use heavy thick strokes mixes with thin strokes, emulate a brush sometimes and fountain pen others. When shading in for color background use mixed greys and one shade of pure red for background coloring. 

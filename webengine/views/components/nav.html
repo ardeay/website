@@ -1,0 +1,75 @@
+<!-- Mobile Responsive Navigation Component -->
+<nav class="bg-white shadow-lg" x-data="{ open: false }">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <!-- Logo/Brand -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="{{site.domain}}" class="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors">
+          {{globals.site_name}}
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex md:items-center md:space-x-8">
+        {{site.navigation()}}
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center md:hidden">
+        <button @click="open = !open" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!-- Menu Icon -->
+          <i class="fas fa-bars text-xl" x-show="!open"></i>
+          <!-- Close Icon -->
+          <i class="fas fa-times text-xl" x-show="open" style="display: none;"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Panel -->
+  <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="md:hidden" style="display: none;">
+    <div class="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg">
+      {{site.navigation()}}
+    </div>
+  </div>
+</nav>
+
+<!-- Alpine.js CDN (if not already included in your layout) -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<style>
+  /* Desktop Navigation Styling */
+  nav .hidden.md\:flex ul {
+    @apply flex space-x-8 list-none m-0 p-0;
+  }
+
+  nav .hidden.md\:flex ul li {
+    @apply m-0;
+  }
+
+  nav .hidden.md\:flex ul li a {
+    @apply text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 no-underline;
+  }
+
+  nav .hidden.md\:flex ul li a.active {
+    @apply text-blue-600 border-b-2 border-blue-600 pb-1;
+  }
+
+  /* Mobile Navigation Styling */
+  nav .md\:hidden .space-y-1 ul {
+    @apply list-none m-0 p-0 space-y-1;
+  }
+
+  nav .md\:hidden .space-y-1 ul li {
+    @apply m-0;
+  }
+
+  nav .md\:hidden .space-y-1 ul li a {
+    @apply block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors duration-200 no-underline;
+  }
+
+  nav .md\:hidden .space-y-1 ul li a.active {
+    @apply bg-blue-50 text-blue-600;
+  }
+</style>
